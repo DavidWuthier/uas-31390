@@ -1,4 +1,4 @@
-# MATLAB/ROS repository for DTU's course 31390 - Unmanned Autonomous Systems
+# MATLAB/ROS repository for DTU-AUT's course 31390 - Unmanned Autonomous Systems
 
 Date: June 2021
 
