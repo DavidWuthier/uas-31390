@@ -13,6 +13,9 @@ Date: June 2021
     - MATLAB Compiler
     - MATLAB Compiler SDK
     - MATLAB Support for MinGW-w64 C/C++ Compiler (example for Windows)
+    - Optimization Toolbox
+    - ROS Toolbox
+    - Robotics System Toolbox
     - Stateflow
     - Simulink
     - Simulink Compiler
@@ -22,9 +25,8 @@ Date: June 2021
     - Simulink 3D Animation
     - Simscape
     - Simscape Multibody
-    - ROS Toolbox
-    - Robotics System Toolbox
     - UAV Toolbox
+    - traj_gen-matlab (only through add-on manager)
   * Install git:
     * On Windows: https://git-scm.com/download/win
     * On MacOS: https://git-scm.com/download/mac
