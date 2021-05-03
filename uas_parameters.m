@@ -16,15 +16,16 @@
 %
 % To use this program: run the simulink model (drone_simulation.slx)
 
-% INITIALIZATION
+%% INITIALIZATION
 
 clear
 close all
 clc
 
 load('uas_parameters.mat')
+load('uas_thrust.mat')
 
-% SIMULATION PARAMETERS
+%% SIMULATION PARAMETERS
 
 route = [1 1 ; 10 1 ; 10 10];
 wall_color = [0.8 0.2 0.2];
@@ -60,6 +61,6 @@ air_density = 1.2041;
 drag_coefficient = 0.47;
 reference_area = pi * 75e-3^2;
 
-% Create Simulink model workspace
+%% Create Simulink model workspace
 
 save('uas_parameters.mat')
