@@ -29,13 +29,13 @@ load('uas_thrust.mat')
 
 route = [0 0 ; 9 0 ; 9 9];
 wall_color = [0.8 0.2 0.2];
-sample_time = 4e-2;
+sample_time = 1e-3;
 publish_rate = 1 * sample_time;
 x0 = 36;
 y0 = 80;
 z0 = 1;
 g = 9.80665 ;
-mass_drone = 0.68 ;
+mass_drone = 0.55 ;
 mass_rod = 0.0;
 mass_tip = 0;
 mass_total = mass_drone + mass_rod + mass_tip;
@@ -43,13 +43,13 @@ stiffness_rod = 100 ;
 critical_damping_rod = 2 * sqrt(mass_total * stiffness_rod) ;
 stiffness_wall = 100 ;
 critical_damping_wall = 2 * sqrt(mass_total * stiffness_wall) ;
-inertia_xx = 0.007 ;
-inertia_yy = 0.007 ;
-inertia_zz = 0.012 ;
-arm_length = 0.17 ;
+inertia_xx = 5*10^(-3) ;
+inertia_yy = 5*10^(-3) ;
+inertia_zz = 8.9*10^(-3) ;
+arm_length = 0.225 ;
 rotor_offset_top = 0.01 ;
-motor_constant = 8.54858e-06 ;
-moment_constant = 0.016 ;
+motor_constant = 0.01 ;
+moment_constant = 0.1 ;
 max_rot_velocity = 838 ;
 allocation_matrix = ...
     [1 1 1 1
