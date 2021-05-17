@@ -27,7 +27,16 @@ load('uas_thrust.mat')
 
 %% SIMULATION PARAMETERS
 
-route = [0 0 ; 9 0 ; 9 9];
+route = [0.3 0.5 0.5
+         0.3 0.5 1
+         1.65 0.5 1
+         1.65 1.5 1
+         1 1.5 1
+         1 1.5 1.5
+         1 2.6 1.5
+         0.3 2.6 1
+         0.3 2.6 0.5
+         0.3 2.6 0];
 wall_color = [0.8 0.2 0.2];
 sample_time = 4e-2;
 publish_rate = 1 * sample_time;
