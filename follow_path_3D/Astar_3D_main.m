@@ -7,9 +7,9 @@ show_children = 0;
 show_open_nodes = 0;
 
 % Define the map size
-max_x = 10;
-max_y = 10;
-max_z = 10;
+max_x = 4;
+max_y = 5;
+max_z = 3;
 map = zeros(max_x, max_y, max_z);
 
 % The cost of going from one point to another
@@ -32,7 +32,7 @@ end
 
 % Define the starting and end position
 start = [1, 1, 1];
-end_ = [10, 10, 10];
+end_ = [4, 5, 1];
 
 % Make sure the start and end is not an obstacle
 map(start(1), start(2), start(3)) = 0;
@@ -65,13 +65,28 @@ for x = 1:max_x
 end
 %}
 
-map = gen_square3d([2 3; 1 10; 1 11], map);
-map = gen_square3d([4 5; 2 11; 1 11], map);
-map = gen_square3d([6 7; 1 8; 1 11], map);
-map = gen_square3d([6 7; 9 11; 1 11], map);
-map = gen_square3d([6 7; 8 9; 1 8], map);
-map = gen_square3d([6 7; 8 9; 9 11], map);
-map = gen_square3d([8 9; 2 11; 1 11], map);
+% The first wall
+map = gen_square3d([1 3; 2 3; 2 4], map);
+map = gen_square3d([3 4; 2 3; 3 4], map);
+map = gen_square3d([4 5; 2 3; 2 4], map);
+% Firsth bottom wall
+map = gen_square3d([1 5; 2 3; 1 2], map);
+
+% The second wall
+map = gen_square3d([1 2; 4 5; 2 4], map);
+map = gen_square3d([2 3; 4 5; 2 3], map);
+map = gen_square3d([3 4; 4 5; 2 4], map);
+map = gen_square3d([4 5; 4 5; 2 3], map);
+
+% The second bottom wall
+map = gen_square3d([1 5; 4 5; 1 2], map);
+%map = gen_square3d([2 3; 1 10; 1 11], map);
+%map = gen_square3d([4 5; 2 11; 1 11], map);
+%map = gen_square3d([6 7; 1 8; 1 11], map);
+%map = gen_square3d([6 7; 9 11; 1 11], map);
+%map = gen_square3d([6 7; 8 9; 1 8], map);
+%map = gen_square3d([6 7; 8 9; 9 11], map);
+%map = gen_square3d([8 9; 2 11; 1 11], map);
 
 % Set the axes
 axis([1 max_x+1 1 max_y+1 1 max_z+1])
@@ -119,7 +134,8 @@ while ~(parent_node.position(1) == end_(1) && ...
         for y = -1:1
             for z = -1:1
                 % Skip the node itself
-                if ~(x == 0 && y == 0 && z == 0)
+                if ~(x == 0 && y == 0 && z == 0 || ...
+                     (abs(x) + abs(y) + abs(z) > 1))
                     node_pos = [parent_node.position(1) + x, ...
                                 parent_node.position(2) + y, ...
                                 parent_node.position(3) + z];
@@ -173,7 +189,13 @@ while ~(parent_node.position(1) == end_(1) && ...
                             % Check if this node should be skipped
                             if continue_flag == 1
                                 continue_flag = 0;
-                                continue
+                                continue%map = gen_square3d([2 3; 1 10; 1 11], map);
+%map = gen_square3d([4 5; 2 11; 1 11], map);
+%map = gen_square3d([6 7; 1 8; 1 11], map);
+%map = gen_square3d([6 7; 9 11; 1 11], map);
+%map = gen_square3d([6 7; 8 9; 1 8], map);
+%map = gen_square3d([6 7; 8 9; 9 11], map);
+%map = gen_square3d([8 9; 2 11; 1 11], map);
                             end
 
                             % Define the child node
@@ -312,3 +334,21 @@ for i = 2:length(route)
     route(i,:)
 end
 hold off
+%%
+% Route scaled
+x_scale = 0.65;
+y_scale = 0.55;
+z_scale = 0.75;
+
+x_offset = 0.3;
+y_offset = 0.5;
+z_offset = 0.25;
+
+route_scaled = route;
+
+route_scaled(:,1) = (route_scaled(:,1) - 1) * x_scale + x_offset;
+route_scaled(:,2) = (route_scaled(:,2) - 1) * y_scale + y_offset;
+route_scaled(:,3) = (route_scaled(:,3) - 1) * z_scale + z_offset;
+
+
+route_scaled

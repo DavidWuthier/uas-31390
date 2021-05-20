@@ -37,7 +37,8 @@ function [ route ] = astar_3d( map, start, end_, length_cost )
             for y = -1:1
                 for z = -1:1
                     % Skip the node itself
-                    if ~(x == 0 && y == 0 && z == 0)
+                    if ~(x == 0 && y == 0 && z == 0 || ...
+                         (abs(x) + abs(y) + abs(z) > 1))
                         node_pos = [parent_node.position(1) + x, ...
                                     parent_node.position(2) + y, ...
                                     parent_node.position(3) + z];
