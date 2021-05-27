@@ -1,9 +1,9 @@
-function poly_traj = uas_minimum_snap(knots, order, waypoints, corridor, make_plots)
+function poly_traj = uas_minimum_snap(knots, order, waypoints, corridors, make_plots)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % MIT License
 % 
-% Copyright (c) 2020 David Wuthier (dwuthier@gmail.com)
+% Copyright (c) 2021 David Wuthier (dwuthier@gmail.com)
 % 
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -51,11 +51,11 @@ for m = 1:length(waypoints)
     poly_traj.addPin(pin);
 end
 
-for i = 1:length(corridor.t)
-    corridor_constraint = [corridor.xm(i) corridor.xp(i)
-                           corridor.ym(i) corridor.yp(i)
-                           corridor.zm(i) corridor.zp(i)];
-    pin = struct('t',corridor.t(i),'d',0,'X',corridor_constraint);
+for i = 1:length(corridors.times)
+    corridor_constraint = [corridors.x_lower(i) corridors.x_upper(i)
+                           corridors.y_lower(i) corridors.y_upper(i)
+                           corridors.z_lower(i) corridors.z_upper(i)];
+    pin = struct('t',corridors.times(i),'d',0,'X',corridor_constraint);
     poly_traj.addPin(pin);
 end
 
