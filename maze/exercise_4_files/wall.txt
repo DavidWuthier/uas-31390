@@ -1,0 +1,37 @@
+% x y z
+% The bottom first wall
+1 2 1
+2 2 1
+3 2 1
+4 2 1
+
+% The bottom second wall
+1 4 1
+2 4 1
+3 4 1
+4 4 1
+
+% The middle first wall
+1 2 2
+2 2 2
+4 2 2
+
+% The middle second wall
+1 4 2
+3 4 2
+4 4 2
+
+% The top first wall
+1 2 3
+2 2 3
+3 2 3
+4 2 3
+
+% The top second wall
+1 4 3
+3 4 3
+
+% The size, start and goal position
+4 5 3
+1 1 1
+4 5 1
