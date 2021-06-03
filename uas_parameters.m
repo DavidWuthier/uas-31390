@@ -30,8 +30,6 @@ clear
 close all
 clc
 
-load('uas_parameters.mat')
-
 %% SIMULATION PARAMETERS
 
 route = [0 0 1 ; 9 0 1 ; 9 9 1];
@@ -67,7 +65,3 @@ mix_matrix = inv(motor_constant * allocation_matrix) ;
 air_density = 1.2041;
 drag_coefficient = 0.47;
 reference_area = pi * 75e-3^2;
-
-%% Create Simulink model workspace
-
-save('uas_parameters.mat')
