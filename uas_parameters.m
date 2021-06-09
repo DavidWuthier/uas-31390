@@ -32,7 +32,7 @@ clc
 
 %% SIMULATION PARAMETERS
 
-route = [0 0 1 ; 9 0 1 ; 9 9 1];
+route = [0 0 0.4 ; 0 0 1 ; 0 -2 1 ; -2 -2 1 ; -2 0 1 ; 0 0 1 ; 0 0 0.4 ; 0 0 0];
 wall_color = [0.8 0.2 0.2];
 sample_time = 4e-2;
 publish_rate = 1 * sample_time;
