@@ -30,6 +30,8 @@ clear
 close all
 clc
 
+load('uas_thrust_constants')
+
 %% SIMULATION PARAMETERS
 
 route = [-2 0 1 ; -2 0 1];

@@ -27,6 +27,6 @@ x = out.pwm.Data(indices)/60000;
 y = out.acceleration.Data(indices) - g;
 result = uas_fit(x, y);
 p1 = result.p1;
-p2 = result.p2;
+p2 = result.p2 - 3;
 save('uas_thrust_constants.mat', 'p1', 'p2')
 
