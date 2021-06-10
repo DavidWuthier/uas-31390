@@ -31,20 +31,21 @@ clc
 
 % Trajectory generation
 
-knots = [0 5];
+knots = [0 3];
 waypoints = cell(1,2);
-waypoints{1} = [0 ; 0 ; 1];
-waypoints{2} = [9 ; 9 ; 1];
+waypoints{1} = [0 ; -2 ; 1];
+waypoints{2} = [0 ; -5 ; 1];
 % Fix this...
 order = 7;
-corridors.times = [1 4];
-corridors.x_lower = [-1 8];
-corridors.x_upper = [1 10];
-corridors.y_lower = [-1 8];
-corridors.y_upper = [1 10];
+corridors.times = [1 2];
+corridors.x_lower = [-1 -1];
+corridors.x_upper = [1 1];
+corridors.y_lower = [-3 -6];
+corridors.y_upper = [-1 -4];
 corridors.z_lower = [0 0];
 corridors.z_upper = [2 2];
 % ...until here
 make_plots = true;
 
 poly_traj = uas_minimum_snap(knots, order, waypoints, corridors, make_plots);
+save('uas_poly_traj', 'poly_traj', 'knots')
