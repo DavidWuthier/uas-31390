@@ -11,6 +11,9 @@ wallSize = 500;
 figure(fig_num)
 
 if max_z == 1
+    % Flip the map, purely to make the plot
+    % match up with matrix
+    map = flip(map)';
 
 
     % Mark the obstacles with blue 
@@ -70,10 +73,19 @@ else
     end
 
     max_z = size(map,3);
+    % This forces the script to only flip the map the first time
+    first = true;
 
     for x = 1:max_x
         for y = 1:max_y
             for z = 1:max_z
+                % Flip each layer of the map, purely to make the plot
+                % match up with matrix
+                if first
+                    map(:,:,z) = flip(map(:,:,z))';
+                    map(:,:,z)
+                end
+                
 
                 if map(x,y,z)
 
@@ -81,8 +93,8 @@ else
                     gen_square3d_no_map(square);
 
                 end
-
             end
+            first = false;
         end
     end
 
