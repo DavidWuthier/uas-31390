@@ -21,8 +21,8 @@ end
 
 %first_wall = [1 1 1 1];
 %second_wall = [1 1 1 1];
-first_wall = [0 0 0 0];
-second_wall = [0 0 0 0];
+%first_wall = [0 0 0 0];
+%second_wall = [0 0 0 0];
 special_maze = [first_wall second_wall]
 
 
