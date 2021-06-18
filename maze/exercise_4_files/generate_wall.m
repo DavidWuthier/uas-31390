@@ -31,6 +31,11 @@ for y = 1:width
     if mod(y, 2) == 1
        continue 
     end
+    if y == 2
+        fprintf(fileID, '%s The first wall\n', '%');
+    else
+        fprintf(fileID, '\n%s The second wall\n', '%');
+    end
     for x = 1:depth
         for z = 1:height
             % Cover the bottom
