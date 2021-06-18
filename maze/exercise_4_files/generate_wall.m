@@ -92,8 +92,6 @@ fprintf(fileID, '%d %d %d\n', depth, width, height);
 
 start_position = randi(4,1,1);
 end_position = randi(4,1,1);
-start_position = 1;
-end_position = 4;
 
 fprintf(fileID, '%d %d %d\n', start_position, 1, 1);
 fprintf(fileID, '%d %d %d\n', end_position, 5, 1);
@@ -144,7 +142,11 @@ ax.GridAlpha = 1.0;
 grid on
 set(gca, 'xtick', [0:1:max_x])
 set(gca, 'ytick', [0:1:max_y])
-set(gca, 'ztick', [0:1:max_z])
+set(gca, 'ztick', [0:1:max_z + 6])
+title(['The drone must start on point: ' ...
+       start_converter(start_position) ...
+       ' and end on point: ' ...
+       end_converter(end_position)]);
 view(0,0);
 
 fprintf('The drone must start on point: %s and end on point: %s\n', ...
