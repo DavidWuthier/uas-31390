@@ -1,6 +1,8 @@
 clear all
 close all
 clc
+% Shuffle the seed
+rng shuffle
 height = 3;
 width = 5;
 depth = 4;
