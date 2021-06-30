@@ -1,4 +1,4 @@
-function poly_traj = uas_minimum_snap(knots, order, waypoints, corridors, make_plots)
+function poly_traj = uas_minimum_snap(knots, order, waypoints, velocities, corridors, make_plots)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % MIT License
@@ -44,7 +44,7 @@ for m = 1:length(waypoints)
     pin = struct('t',knots(m),'d',0,'X',waypoints{m});
     poly_traj.addPin(pin);
     % Order 1 pin 
-    pin = struct('t',knots(m),'d',1,'X',x0d);
+    pin = struct('t',knots(m),'d',1,'X',velocities{m});
     poly_traj.addPin(pin);
     % Order 2 pin 
     pin = struct('t',knots(m),'d',2,'X',x0dd);

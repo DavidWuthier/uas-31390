@@ -31,10 +31,14 @@
 
 % Trajectory generation
 
-knots = [0 5];
+knots = [0 10 20];
 waypoints = cell(1,2);
-waypoints{1} = [0 ; 0 ; 2];
-waypoints{2} = [2 ; 0 ; 2];
+waypoints{1} = [0 ; -2 ; 1];
+waypoints{2} = [1 ; -2 ; 1];
+waypoints{3} = [1 ; -1 ; 1];
+velocities{1} = [0 ; 0 ; 0];
+velocities{2} = [0 ; 0.5 ; 0];
+velocities{3} = [0 ; 0 ; 0];
 % Fix this...
 order = 7;
 corridors.times = [];
@@ -47,4 +51,4 @@ corridors.z_upper = [];
 % ...until here
 make_plots = true;
 
-poly_traj = uas_minimum_snap(knots, order, waypoints, corridors, make_plots);
+poly_traj = uas_minimum_snap(knots, order, waypoints, velocities, corridors, make_plots);

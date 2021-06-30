@@ -24,13 +24,17 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% INITIALIZATION
+% INITIALIZATION
 
 clear
 close all
 clc
 
-%% SIMULATION PARAMETERS
+%
+
+load('uas_thrust_constants.mat')
+
+% SIMULATION PARAMETERS
 
 route = [0 0 1 ; 9 0 1 ; 9 9 1];
 wall_color = [0.8 0.2 0.2];
