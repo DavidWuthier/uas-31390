@@ -26,6 +26,7 @@ Date: June 2021
     - Simscape
     - Simscape Multibody
     - UAV Toolbox
+    - Curve Fitting Toolbox
     - traj_gen-matlab (only through add-on manager)
   * Install git:
     * On Windows: https://git-scm.com/download/win
