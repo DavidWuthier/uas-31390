@@ -31,17 +31,28 @@
 
 % Trajectory generation
 
-knots = [0 10 20 30];
-waypoints = cell(1,4);
-velocities = cell(1,4);
-waypoints{1} = [0 ; -2 ; 1];
-waypoints{2} = [0 ; -2 ; 1];
-waypoints{3} = [0 ; -2 ; 1];
-waypoints{4} = [0 ; -2 ; 1];
+on_helipad = p_h(:,4) - 0.2*u_h(:,4);
+in_helipad = p_h(:,4);
+
+knots = [0 10 11 12 20 21 22 30];
+waypoints = cell(1,8);
+velocities = cell(1,8);
+waypoints{1} = on_helipad;
+waypoints{2} = p_h(:,1) - 0.5*u_h(:,1);
+waypoints{3} = p_h(:,1) - 0.2*u_h(:,1);
+waypoints{4} = p_h(:,1) + 0.1*u_h(:,1);
+waypoints{5} = p_h(:,2) - 0.5*u_h(:,2);
+waypoints{6} = p_h(:,2) - 0.2*u_h(:,2);
+waypoints{7} = p_h(:,2) + 0.1*u_h(:,2);
+waypoints{8} = on_helipad;
 velocities{1} = [0 ; 0 ; 0];
-velocities{2} = [0 ; 0 ; 0];
-velocities{3} = [0 ; 0 ; 0];
-velocities{4} = [0 ; 0 ; 0];
+velocities{2} = 0.3*u_h(:,1);
+velocities{3} = 0.3*u_h(:,1);
+velocities{4} = 0.3*u_h(:,1);
+velocities{5} = 0.3*u_h(:,2);
+velocities{6} = 0.3*u_h(:,2);
+velocities{7} = 0.3*u_h(:,2);
+velocities{8} = [0 ; 0 ; 0];
 % Fix this...
 order = 7;
 corridors.times = [];
