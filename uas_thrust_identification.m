@@ -17,7 +17,7 @@ ylim([-10 10])
 
 %% Trimming
 
-indices = out.pwm.Time > 10 & out.pwm.Time < 45;
+indices = out.pwm.Time > 25 & out.pwm.Time < 55;
 
 %%
 
