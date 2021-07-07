@@ -32,13 +32,17 @@
 
 % Run Simulink Model
 
+disp('looking for hoops...')
+
 out = sim('uas_hoops.slx');
+
+disp('...done')
 
 % Extract positions and directions
 
-p_h = mean(out.hoop_positions.Data(:,:,end-10:end), 3);
+p_h = mean(out.hoop_positions.Data(:,:,end-10:end), 3)
 
-u_h = mean(out.hoop_directions.Data(:,:,end-10:end), 3);
+u_h = mean(out.hoop_directions.Data(:,:,end-10:end), 3)
 
 for i = 1:4
     u_h(:,i) = u_h(:,i)/norm(u_h(:,i), 2);
