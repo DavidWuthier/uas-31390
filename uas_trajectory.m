@@ -31,7 +31,7 @@
 
 % Trajectory generation
 
-over_helipad = p_h(:,4) - 0.2*u_h(:,4);
+over_helipad = p_h(:,4) - 1.0*u_h(:,4);
 under_helipad = p_h(:,4) + 0.2*u_h(:,4);
 in_helipad = p_h(:,4);
 
