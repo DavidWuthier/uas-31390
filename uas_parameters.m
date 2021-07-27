@@ -36,6 +36,11 @@ load('uas_thrust_constants.mat')
 
 % SIMULATION PARAMETERS
 
+position_gain = 4;
+velocity_gain = 2.2;
+sim = true;
+contact_pitch = deg2rad(15);
+rod_length = 0.5;
 route = [0 0 1 ; 9 0 1 ; 9 9 1];
 wall_color = [0.8 0.2 0.2];
 sample_time = 1e-2;
