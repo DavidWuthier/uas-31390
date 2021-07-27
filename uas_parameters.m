@@ -38,8 +38,8 @@ load('uas_thrust_constants.mat')
 
 route = [0 0 1 ; 9 0 1 ; 9 9 1];
 wall_color = [0.8 0.2 0.2];
-sample_time = 4e-2;
-publish_rate = 1 * sample_time;
+sample_time = 1e-2;
+publish_rate = 4 * sample_time;
 x0 = 36;
 y0 = 80;
 z0 = 0.3;
@@ -50,7 +50,7 @@ mass_tip = 0;
 mass_total = mass_drone + mass_rod + mass_tip;
 stiffness_rod = 100 ;
 critical_damping_rod = 2 * sqrt(mass_total * stiffness_rod) ;
-stiffness_wall = 100 ;
+stiffness_wall = 10 ;
 critical_damping_wall = 2 * sqrt(mass_total * stiffness_wall) ;
 inertia_xx = 0.007 ;
 inertia_yy = 0.007 ;
