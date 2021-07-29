@@ -39,7 +39,6 @@ load('demo_positions.mat')
 
 position_gain = 4;
 velocity_gain = 2.2;
-simulated = false;
 contact_pitch = deg2rad(15);
 rod_length = 0.5;
 route = [0 0 1 ; 9 0 1 ; 9 9 1];
