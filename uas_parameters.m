@@ -33,6 +33,7 @@ clc
 %% SIMULATION PARAMETERS
 
 run("maze/exercise_4_files/map_script_3d.m"); % Either need route or route scaled
+route = route_scaled;
 wall_color = [0.8 0.2 0.2];
 sample_time = 4e-2;
 publish_rate = 1 * sample_time;
